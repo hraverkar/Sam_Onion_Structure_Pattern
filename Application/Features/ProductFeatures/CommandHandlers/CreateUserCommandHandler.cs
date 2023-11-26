@@ -2,12 +2,13 @@
 using Domain.Entities;
 using MediatR;
 using saloon_web.Generic_Interface;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Application.Features.ProductFeatures.CommandHandlers
 {
-    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Unit>
+    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, string>
     {
         private readonly IGenericRepository<User> _userRepository;
         public CreateUserCommandHandler(IGenericRepository<User> userRepository)
@@ -15,18 +16,25 @@ namespace Application.Features.ProductFeatures.CommandHandlers
             _userRepository = userRepository;
         }
 
-        async Task<Unit> IRequestHandler<CreateUserCommand, Unit>.Handle(CreateUserCommand command, CancellationToken cancellationToken)
+        async Task<string> IRequestHandler<CreateUserCommand, string>.Handle(CreateUserCommand command, CancellationToken cancellationToken)
         {
-            var User = new User
+            try
             {
-                Id = command.Id,
-                Name = command.Name,
-                Email = command.Email,
-                CreatedAt = command.CreatedAt,
-                CreatedBy = command.CreatedBy
-            };
-            await _userRepository.AddAsync(User);
-            return await Task.FromResult(Unit.Value);
+                var User = new User
+                {
+                    Id = command.Id,
+                    Name = command.Name,
+                    Email = command.Email,
+                    CreatedAt = command.CreatedAt,
+                    CreatedBy = command.CreatedBy
+                };
+                await _userRepository.AddAsync(User);
+                return await Task.FromResult("User successfully created!!");
+            }
+            catch (Exception ex)
+            {
+                return $"User creation failed!! \r\n {ex}";
+            }
         }
     }
 }

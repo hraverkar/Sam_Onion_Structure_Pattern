@@ -4,19 +4,26 @@
         <name>WebApi</name>
     </assembly>
     <members>
-        <member name="M:WebApi.Controllers.v1.UserController.Create(Domain.Dtos.CreateUserDto)">
+        <member name="M:WebApi.Controllers.UserController.Create(Domain.Dtos.CreateUserDto)">
             <summary>
-            Creates a New Product.
+            Creates a new user.
             </summary>
             <param name="request"></param>
             <returns></returns>
         </member>
-        <member name="M:WebApi.Controllers.v1.UserController.GetAllUsers">
+        <member name="M:WebApi.Controllers.UserController.GetAllUsers">
             <summary>
-            Get All Users .
+            Get All Users.
             </summary>
             <param></param>
             <returns>Get All Users</returns>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.DeleteUsers(System.Guid)">
+            <summary>
+            Delete User.
+            </summary>
+            <param name="id"></param>
+            <returns>Delete User</returns>
         </member>
     </members>
 </doc>

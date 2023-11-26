@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.ProductFeatures.Commands
 {
-    public class CreateUserCommand : IRequest<Unit>
+    public class CreateUserCommand : IRequest<string>
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
