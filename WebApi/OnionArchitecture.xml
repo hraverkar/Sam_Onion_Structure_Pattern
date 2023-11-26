@@ -8,8 +8,15 @@
             <summary>
             Creates a New Product.
             </summary>
-            <param name="command"></param>
+            <param name="request"></param>
             <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.v1.UserController.GetAllUsers">
+            <summary>
+            Get All Users .
+            </summary>
+            <param></param>
+            <returns>Get All Users</returns>
         </member>
     </members>
 </doc>
