@@ -4,7 +4,7 @@
         <name>WebApi</name>
     </assembly>
     <members>
-        <member name="M:WebApi.Controllers.v1.ProductController.Create(Domain.Dtos.CreateUserDto)">
+        <member name="M:WebApi.Controllers.v1.UserController.Create(Domain.Dtos.CreateUserDto)">
             <summary>
             Creates a New Product.
             </summary>
