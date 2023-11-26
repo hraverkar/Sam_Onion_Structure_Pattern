@@ -23,7 +23,7 @@ Read more on my Blog Post - https://www.codewithmukesh.com/blog/onion-architectu
 I am building a more complex variant of this implementation that will be production ready. Check out the Repository @ https://github.com/iammukeshm/CleanArchitecture.WebApi
 
 ## Questions? Bugs? Suggestions for Improvement?
-Having any issues or troubles getting started? [Get in touch with me](https://www.codewithmukesh.com/contact) 
+Having any issues or troubles getting started? 
 
 ## Support
 Has this Project helped you learn something New? or Helped you at work? Do Consider Supporting.
@@ -33,13 +33,4 @@ Has this Project helped you learn something New? or Helped you at work? Do Consi
 ## Share it!
 I have personally not come across a clean implementation on a WebAPI, which is the reason that I started building this up. There are quite a lot of improvements and fixes along the way from the day I started out. Thanks to the community for the support and suggestions.
 Please share this Repository within your developer community, if you think that this would a difference! Thanks.
-
-## About the Author
-### Mukesh Murugan
-- Blogs at [codewithmukesh.com](https://www.codewithmukesh.com)
-- Facebook - [codewithmukesh](https://www.facebook.com/codewithmukesh)
-- Twitter - [Mukesh Murugan](https://www.twitter.com/iammukeshm)
-- Twitter - [codewithmukesh](https://www.twitter.com/codewithmukesh)
-- Linkedin - [Mukesh Murugan](https://www.linkedin.com/in/iammukeshm/)
-
 
