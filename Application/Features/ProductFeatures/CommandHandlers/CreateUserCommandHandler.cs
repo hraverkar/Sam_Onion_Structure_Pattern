@@ -1,14 +1,9 @@
 ﻿using Application.Features.ProductFeatures.Commands;
-using Application.Interfaces;
 using Domain.Entities;
 using MediatR;
 using saloon_web.Generic_Interface;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Application.Features.ProductFeatures.CommandHandlers
 {
