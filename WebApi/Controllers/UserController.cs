@@ -31,7 +31,7 @@ namespace WebApi.Controllers
         [Route("create-user")]
         public async Task<IActionResult> Create([FromBody] CreateUserDto request)
         {
-            var command = new CreateUserCommand(request.Id, request.Name, request.Email, request.CreatedAt, request.CreatedBy);
+            var command = new CreateUserCommand(request.Name, request.Email);
             var result = await _mediator.Send(command);
             return Ok(result);
         }

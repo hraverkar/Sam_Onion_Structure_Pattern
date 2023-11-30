@@ -22,11 +22,9 @@ namespace Application.Features.ProductFeatures.CommandHandlers
             {
                 var User = new User
                 {
-                    Id = command.Id,
                     Name = command.Name,
                     Email = command.Email,
-                    CreatedAt = command.CreatedAt,
-                    CreatedBy = command.CreatedBy
+                    CreatedBy = "Harshal"
                 };
                 await _userRepository.AddAsync(User);
                 return await Task.FromResult("User successfully created!!");

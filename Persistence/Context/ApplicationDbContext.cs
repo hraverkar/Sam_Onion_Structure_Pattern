@@ -17,6 +17,8 @@ namespace Persistence.Context
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<User> Users { get; set; }
+        public DbSet<UserAttendanceDetails> UserAttendances { get; set; }
+        public DbSet<FileDetails> Files { get; set; }
         public async Task<int> SaveChangesAsync()
         {
             return await base.SaveChangesAsync();

@@ -13,6 +13,7 @@
 		<NoWarn>1701;1702;1591</NoWarn>
 	</PropertyGroup>
 	<ItemGroup>
+		<PackageReference Include="ExcelDataReader" Version="3.6.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
 		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.11" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />

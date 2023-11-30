@@ -11,19 +11,13 @@ namespace Application.Features.ProductFeatures.Commands
 {
     public class CreateUserCommand : IRequest<string>
     {
-        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public string CreatedBy { get; set; }
 
-        public CreateUserCommand(Guid id, string name, string email, DateTime createAt, string createdBy)
+        public CreateUserCommand(string name, string email)
         {
-            Id = id;
             Name = name;
             Email = email;
-            CreatedAt = createAt;
-            CreatedBy = createdBy;
         }
 
     }
