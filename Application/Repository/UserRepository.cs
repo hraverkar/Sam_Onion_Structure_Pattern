@@ -1,8 +1,8 @@
 ﻿
+using Application.Generic_Interface;
 using Application.Interfaces;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using saloon_web.Generic_Interface;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

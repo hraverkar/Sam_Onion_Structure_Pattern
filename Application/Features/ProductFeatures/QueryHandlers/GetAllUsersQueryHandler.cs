@@ -1,11 +1,11 @@
 ﻿using Application.Features.ProductFeatures.Queries;
+using Application.Generic_Interface;
 using Domain.Dtos;
 using Domain.Entities;
 using MediatR;
-using saloon_web.Generic_Interface;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -26,7 +26,7 @@ namespace Application.Features.ProductFeatures.QueryHandlers
                 throw new ArgumentNullException(nameof(request));
             }
             var allUsers = await _userRepository.GetAllAsync();
-            return allUsers;
+            return allUsers.OrderByDescending(c => c.CreatedAt);
         }
     }
 }

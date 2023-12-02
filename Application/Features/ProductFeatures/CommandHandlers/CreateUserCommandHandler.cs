@@ -1,7 +1,7 @@
 ﻿using Application.Features.ProductFeatures.Commands;
+using Application.Generic_Interface;
 using Domain.Entities;
 using MediatR;
-using saloon_web.Generic_Interface;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -31,7 +31,7 @@ namespace Application.Features.ProductFeatures.CommandHandlers
             }
             catch (Exception ex)
             {
-                return $"User creation failed!! \r\n {ex}";
+                return await Task.FromResult($"User creation failed!! \r\n {ex}");
             }
         }
     }

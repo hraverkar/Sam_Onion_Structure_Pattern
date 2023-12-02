@@ -1,7 +1,7 @@
 ﻿using Application.Features.ProductFeatures.Commands;
+using Application.Generic_Interface;
 using Domain.Entities;
 using MediatR;
-using saloon_web.Generic_Interface;
 using saloon_web.Repository;
 using System;
 using System.Collections.Generic;
@@ -32,16 +32,17 @@ namespace Application.Features.ProductFeatures.CommandHandlers
                     FileName = request.FileName,
                     CreatedBy = "Harshal Raverkar"
                 };
+
                 await _fileRepository.AddAsync(fileDetail);
                 return await Task.FromResult("File successfully saved!!");
             }
             catch (Exception ex)
             {
-                return $"File saving failed!! \r\n {ex}";
+                return await Task.FromResult($"File saving failed!! \r\n {ex}");
             }
         }
 
-        private byte[] FileStringToBase(string file)
+        private static byte[] FileStringToBase(string file)
         {
             var arrData = file.Split(';');
             if (arrData != null && arrData.Length > 1)

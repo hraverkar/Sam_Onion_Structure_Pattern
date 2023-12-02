@@ -3,7 +3,6 @@ using Domain.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -31,17 +30,26 @@ namespace WebApi.Controllers
                 var result = await _mediator.Send(command);
                 return Ok(result);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
 
         // DELETE api/<UserAttendanceDetails>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(Guid id)
         {
-
+            try
+            {
+                var command = new DeleteFileCommand(id);
+                var result = await _mediator.Send(command);
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

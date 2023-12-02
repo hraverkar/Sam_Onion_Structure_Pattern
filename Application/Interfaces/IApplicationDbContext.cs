@@ -12,6 +12,7 @@ namespace Application.Interfaces
         DbSet<User> Users { get; set; }
         DbSet<FileDetails> Files { get; set; }
         DbSet<UserAttendanceDetails> UserAttendances { get; set; }
+        DbSet<ClassTable> Classes { get; set; }
         Task<int> SaveChangesAsync();
     }
 }

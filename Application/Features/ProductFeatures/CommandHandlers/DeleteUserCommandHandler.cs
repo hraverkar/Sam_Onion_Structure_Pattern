@@ -1,7 +1,7 @@
 ﻿using Application.Features.ProductFeatures.Commands;
+using Application.Generic_Interface;
 using Domain.Entities;
 using MediatR;
-using saloon_web.Generic_Interface;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,11 +18,11 @@ namespace Application.Features.ProductFeatures.CommandHandlers
         {
             if (request == null)
             {
-                return "User deletion failed!!";
+                return await Task.FromResult("User deletion failed!!");
             }
 
             await _userRepository.DeleteAsync(request.Id);
-            return "User successfully deleted!!";
+            return await Task.FromResult("User successfully deleted!!");
         }
     }
 }

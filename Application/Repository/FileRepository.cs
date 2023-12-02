@@ -1,10 +1,9 @@
-﻿using Application.Interfaces;
+﻿using Application.Generic_Interface;
+using Application.Interfaces;
 using Domain.Entities;
-using saloon_web.Generic_Interface;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Application.Repository
@@ -22,19 +21,24 @@ namespace Application.Repository
             await _context.SaveChangesAsync();
         }
 
-        public Task DeleteAsync(Guid id)
+        public async Task DeleteAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var user = await _context.Files.FirstOrDefaultAsync(c => c.Id == id);
+            if (user != null)
+            {
+                _context.Files.Remove(user);
+                await _context.SaveChangesAsync();
+            }
         }
 
-        public Task<IEnumerable<FileDetails>> GetAllAsync()
+        public async Task<IEnumerable<FileDetails>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _context.Files.ToListAsync();
         }
 
-        public Task<FileDetails> GetByIdAsync(Guid id)
+        public async Task<FileDetails> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await _context.Files.FirstOrDefaultAsync(c => c.Id == id);
         }
 
         public Task UpdateAsync(FileDetails entity)

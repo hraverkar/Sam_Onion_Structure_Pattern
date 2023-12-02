@@ -1,7 +1,5 @@
-﻿using Domain.Entities;
+﻿using Application.Generic_Interface;
 using Microsoft.Extensions.DependencyInjection;
-using saloon_web.Generic_Interface;
-using saloon_web.Repository;
 using System.Linq;
 using System.Reflection;
 

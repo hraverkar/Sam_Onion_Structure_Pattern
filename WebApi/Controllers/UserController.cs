@@ -1,11 +1,9 @@
 ﻿using Application.Features.ProductFeatures.Commands;
 using Application.Features.ProductFeatures.Queries;
 using Domain.Dtos;
-using Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace WebApi.Controllers

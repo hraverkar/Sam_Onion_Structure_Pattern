@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace saloon_web.Generic_Interface
+namespace Application.Generic_Interface
 {
     public interface IGenericRepository<T>
     {
