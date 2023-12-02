@@ -4,6 +4,27 @@
         <name>WebApi</name>
     </assembly>
     <members>
+        <member name="M:WebApi.Controllers.ClassController.GetAllClassAsync">
+            <summary>
+            Get all classes details.
+            </summary>
+            <param></param>
+            <returns>Get all classes</returns>
+        </member>
+        <member name="M:WebApi.Controllers.UserAttendanceDetailsController.UploadFile(Domain.Dtos.FileDto)">
+            <summary>
+            Upload Files
+            </summary>
+            <param name="request"></param>
+            <returns>Upload Files</returns>
+        </member>
+        <member name="M:WebApi.Controllers.UserAttendanceDetailsController.Delete(System.Guid)">
+            <summary>
+            Delete File.
+            </summary>
+            <param name="id"></param>
+            <returns>Deleted file result</returns>
+        </member>
         <member name="M:WebApi.Controllers.UserController.Create(Domain.Dtos.CreateUserDto)">
             <summary>
             Creates a new user.

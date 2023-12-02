@@ -20,8 +20,12 @@ namespace WebApi.Controllers
             _mediator = mediator;
         }
 
-        // GET: api/<ClassControllerz>
-        [HttpGet("getAll-class")]
+        /// <summary>
+        /// Get all classes details.
+        /// </summary>
+        /// <param></param>
+        /// <returns>Get all classes</returns>
+        [HttpGet("get-all-class")]
         public async Task<IActionResult> GetAllClassAsync()
         {
             try
@@ -34,32 +38,6 @@ namespace WebApi.Controllers
             {
                 throw;
             }
-        }
-
-        // GET api/<ClassControllerz>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<ClassControllerz>
-        [HttpPost("add-class")]
-        public void Post([FromBody] ClassTable request)
-        {
-           
-        }
-
-        // PUT api/<ClassControllerz>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<ClassControllerz>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }

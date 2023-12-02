@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace saloon_web.Repository
+namespace Application.Repository
 {
     public class UserRepository : IGenericRepository<User>
     {

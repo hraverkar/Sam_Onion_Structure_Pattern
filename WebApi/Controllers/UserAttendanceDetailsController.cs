@@ -2,6 +2,7 @@
 using Domain.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Threading.Tasks;
 
@@ -20,15 +21,19 @@ namespace WebApi.Controllers
             _mediator = mediator;
         }
 
-        // POST api/<UserAttendanceDetails>
-        [HttpPost("upload-file")]
+        /// <summary>
+        /// Upload Files
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns>Upload Files</returns>
+        [HttpPost("upload-file"), FormatFilter]
         public async Task<IActionResult> UploadFile([FromBody] FileDto request)
         {
             try
             {
                 var command = new CreateFileCommand(request.FileName, request.FileData, null);
                 var result = await _mediator.Send(command);
-                return Ok(result);
+                return Ok(new { Value = result });
             }
             catch (Exception)
             {
@@ -36,15 +41,19 @@ namespace WebApi.Controllers
             }
         }
 
-        // DELETE api/<UserAttendanceDetails>/5
-        [HttpDelete("{id}")]
+        /// <summary>
+        /// Delete File.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Deleted file result</returns>
+        [HttpDelete("{id}"), FormatFilter]
         public async Task<IActionResult> Delete(Guid id)
         {
             try
             {
                 var command = new DeleteFileCommand(id);
                 var result = await _mediator.Send(command);
-                return Ok(result);
+                return Ok(new { Value = result });
             }
             catch (Exception)
             {

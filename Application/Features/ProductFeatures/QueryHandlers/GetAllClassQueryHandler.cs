@@ -3,7 +3,6 @@ using Application.Generic_Interface;
 using Domain.Dtos;
 using Domain.Entities;
 using MediatR;
-using saloon_web.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;

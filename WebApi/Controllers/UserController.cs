@@ -60,7 +60,7 @@ namespace WebApi.Controllers
         {
             var command = new DeleteUserCommand(id);
             var result = await _mediator.Send(command);
-            return Ok(result);
+            return Ok(new { Value = result });
         }
 
     }
