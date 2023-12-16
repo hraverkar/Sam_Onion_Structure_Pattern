@@ -1,6 +1,5 @@
 ﻿using Application.Features.ProductFeatures.Queries;
 using Application.Interfaces;
-using Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -49,11 +48,31 @@ namespace WebApi.Controllers
         /// <param>city</param>
         /// <returns>WeatherDataInformation</returns>
         [HttpGet("city")]
-        public async Task<IActionResult> GetCityWeatherInformation([FromQuery]string city)
+        public async Task<IActionResult> GetCityWeatherInformation([FromQuery] string city)
         {
             try
             {
                 var query = new GetCityWeatherQuery(city);
+                var result = await _mediator.Send(query);
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Get the 3 hourly 5 days weather details of city.
+        /// </summary>
+        /// <param>latiture, longitude</param>
+        /// <returns>WeatherForecastDetails</returns>
+        [HttpGet("hourly-forcast")]
+        public async Task<IActionResult> GetHourlyCityWeatherInformation([FromQuery] double latitude, [FromQuery] double longitude)
+        {
+            try
+            {
+                var query = new GetHourlyCityWeatherQuery(latitude, longitude);
                 var result = await _mediator.Send(query);
                 return Ok(result);
             }

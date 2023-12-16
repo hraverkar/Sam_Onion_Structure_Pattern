@@ -11,7 +11,7 @@ namespace Application
         public static void AddApplication(this IServiceCollection services)
         {
             services.AddMediatR(Assembly.GetExecutingAssembly());
-            services.AddSingleton<IWeatherService, WeatherService>();
+            services.AddTransient<IWeatherService, WeatherService>();
         }
     }
 }

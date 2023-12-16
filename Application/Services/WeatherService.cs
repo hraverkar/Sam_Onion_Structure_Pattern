@@ -1,8 +1,12 @@
 ﻿using Application.Interfaces;
+using Domain.LocalDtos;
+using ExcelDataReader.Log;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Application.Services
 {
@@ -29,6 +33,32 @@ namespace Application.Services
                 {
                     var stringResult = await response.Content.ReadAsStringAsync();
                     return JsonConvert.DeserializeObject<WeatherDataInformation>(stringResult);
+                }
+            }
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (System.Text.Json.JsonException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return weatherDataInformation;
+        }
+
+        public async Task<WeatherForecastDetails> GetHourlLatLongAsync(double latitude, double longitude)
+        {
+            WeatherForecastDetails? weatherDataInformation = null;
+            try
+            {
+
+                HttpResponseMessage response = await _httpClient.GetAsync($"forecast?lat={latitude}&lon={longitude}&appid={this._apiKey}");
+                response.EnsureSuccessStatusCode();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var stringResult = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<WeatherForecastDetails>(stringResult);
                 }
             }
             catch (HttpRequestException ex)
