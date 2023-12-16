@@ -50,6 +50,7 @@ namespace WebApi
             services.AddPersistence(Configuration);
             services.AddControllers();
             services.AddRepositories();
+            services.AddHttpClient();
 
             services.AddCors(options =>
             {

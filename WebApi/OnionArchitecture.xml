@@ -11,6 +11,13 @@
             <param></param>
             <returns>Get all classes</returns>
         </member>
+        <member name="M:WebApi.Controllers.ClassController.GetCityWeatherInformation(System.String)">
+            <summary>
+            Get the weather details of city.
+            </summary>
+            <param>city</param>
+            <returns>WeatherDataInformation</returns>
+        </member>
         <member name="M:WebApi.Controllers.UserAttendanceDetailsController.UploadFile(Domain.Dtos.FileDto)">
             <summary>
             Upload Files

@@ -1,4 +1,5 @@
 ﻿using Application.Features.ProductFeatures.Queries;
+using Application.Interfaces;
 using Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -15,9 +16,11 @@ namespace WebApi.Controllers
     {
 
         private readonly IMediator _mediator;
-        public ClassController(IMediator mediator)
+        private IWeatherService _weatherService;
+        public ClassController(IMediator mediator, IWeatherService weatherService)
         {
             _mediator = mediator;
+            _weatherService = weatherService;
         }
 
         /// <summary>
@@ -31,6 +34,26 @@ namespace WebApi.Controllers
             try
             {
                 var query = new GetAllClassQuery();
+                var result = await _mediator.Send(query);
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Get the weather details of city.
+        /// </summary>
+        /// <param>city</param>
+        /// <returns>WeatherDataInformation</returns>
+        [HttpGet("city")]
+        public async Task<IActionResult> GetCityWeatherInformation([FromQuery]string city)
+        {
+            try
+            {
+                var query = new GetCityWeatherQuery(city);
                 var result = await _mediator.Send(query);
                 return Ok(result);
             }
