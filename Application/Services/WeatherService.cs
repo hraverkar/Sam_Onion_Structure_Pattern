@@ -1,12 +1,9 @@
 ﻿using Application.Interfaces;
 using Domain.LocalDtos;
-using ExcelDataReader.Log;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Application.Services
 {

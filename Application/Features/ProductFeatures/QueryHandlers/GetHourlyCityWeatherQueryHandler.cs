@@ -1,12 +1,8 @@
 ﻿using Application.Features.ProductFeatures.Queries;
 using Application.Interfaces;
-using Application.Services;
 using Domain.LocalDtos;
 using MediatR;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 

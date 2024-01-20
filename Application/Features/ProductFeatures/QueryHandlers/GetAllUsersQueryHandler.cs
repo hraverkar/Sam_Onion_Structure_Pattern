@@ -1,6 +1,5 @@
 ﻿using Application.Features.ProductFeatures.Queries;
 using Application.Generic_Interface;
-using Domain.Dtos;
 using Domain.Entities;
 using MediatR;
 using System;

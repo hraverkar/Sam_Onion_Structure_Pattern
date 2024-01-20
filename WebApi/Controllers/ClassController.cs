@@ -15,11 +15,9 @@ namespace WebApi.Controllers
     {
 
         private readonly IMediator _mediator;
-        private IWeatherService _weatherService;
-        public ClassController(IMediator mediator, IWeatherService weatherService)
+        public ClassController(IMediator mediator)
         {
             _mediator = mediator;
-            _weatherService = weatherService;
         }
 
         /// <summary>

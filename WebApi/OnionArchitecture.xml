@@ -18,6 +18,13 @@
             <param>city</param>
             <returns>WeatherDataInformation</returns>
         </member>
+        <member name="M:WebApi.Controllers.ClassController.GetHourlyCityWeatherInformation(System.Double,System.Double)">
+            <summary>
+            Get the 3 hourly 5 days weather details of city.
+            </summary>
+            <param>latiture, longitude</param>
+            <returns>WeatherForecastDetails</returns>
+        </member>
         <member name="M:WebApi.Controllers.UserAttendanceDetailsController.UploadFile(Domain.Dtos.FileDto)">
             <summary>
             Upload Files

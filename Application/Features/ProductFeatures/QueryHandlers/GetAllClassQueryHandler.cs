@@ -1,12 +1,10 @@
 ﻿using Application.Features.ProductFeatures.Queries;
 using Application.Generic_Interface;
-using Domain.Dtos;
 using Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 

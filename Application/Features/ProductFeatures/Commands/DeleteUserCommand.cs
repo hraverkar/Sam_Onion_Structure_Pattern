@@ -1,8 +1,5 @@
-﻿using Domain.Dtos;
-using MediatR;
+﻿using MediatR;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Application.Features.ProductFeatures.Commands
 {
