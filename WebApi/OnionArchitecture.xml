@@ -25,6 +25,13 @@
             <param>latiture, longitude</param>
             <returns>WeatherForecastDetails</returns>
         </member>
+        <member name="M:WebApi.Controllers.StudentController.UploadFile(Domain.Dtos.StudentFileUploadDto)">
+            <summary>
+            Upload Files
+            </summary>
+            <param name="request"></param>
+            <returns>Upload Files</returns>
+        </member>
         <member name="M:WebApi.Controllers.UserAttendanceDetailsController.UploadFile(Domain.Dtos.FileDto)">
             <summary>
             Upload Files

@@ -24,6 +24,8 @@ namespace Application.Interfaces
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
 
+        public DbSet<UploadInformation> UploadInformations { get; set; }
+
         Task<int> SaveChangesAsync();
     }
 }
