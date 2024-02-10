@@ -11,5 +11,6 @@ namespace Application.Generic_Interface
         Task AddAsync(T entity);
         Task UpdateAsync(T entity);
         Task DeleteAsync(Guid id);
+        Task UpdateIsDeletedFlag(Guid id);
     }
 }

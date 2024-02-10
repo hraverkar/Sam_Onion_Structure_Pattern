@@ -51,5 +51,10 @@ namespace Application.Repository
                 await _context.SaveChangesAsync();
             }
         }
+
+        Task IGenericRepository<Course>.UpdateIsDeletedFlag(Guid id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

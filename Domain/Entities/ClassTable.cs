@@ -6,6 +6,7 @@ namespace Domain.Entities
     {
         public string ClassName { get; set; }
         public string Section { get; set; }
+        public bool IsDeleted { get; set; }
 
     }
 }

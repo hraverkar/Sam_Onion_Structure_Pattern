@@ -10,7 +10,7 @@ namespace WebApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    /// User Controller for all user activity
+    // User Controller for all user activity
     public class UserController : ControllerBase
     {
         private readonly IMediator _mediator;

@@ -21,7 +21,7 @@ namespace Application.Features.ProductFeatures.CommandHandlers
                 return await Task.FromResult("User deletion failed!!");
             }
 
-            await _userRepository.DeleteAsync(request.Id);
+            await _userRepository.UpdateIsDeletedFlag(request.Id);
             return await Task.FromResult("User successfully deleted!!");
         }
     }

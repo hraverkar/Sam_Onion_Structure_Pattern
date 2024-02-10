@@ -32,6 +32,19 @@ namespace Application.Repository
             return await _context.Classes.FirstOrDefaultAsync(c => c.Id == id);
         }
 
+        public async Task UpdateIsDeletedFlag(Guid id)
+        {
+            var user = await _context.Classes.FirstOrDefaultAsync(c => c.Id == id);
+            if (user != null)
+            {
+                user.IsDeleted = true;
+                user.UpdatedBy = "Harshal";
+                user.UpdatedAt = DateTime.Now;
+                _context.Classes.Update(user);
+                await _context.SaveChangesAsync();
+            }
+        }
+
         async Task IGenericRepository<ClassTable>.DeleteAsync(Guid id)
         {
             var user = await _context.Files.FirstOrDefaultAsync(c => c.Id == id);

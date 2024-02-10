@@ -45,5 +45,10 @@ namespace Application.Repository
         {
             throw new NotImplementedException();
         }
+
+        public Task UpdateIsDeletedFlag(Guid id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

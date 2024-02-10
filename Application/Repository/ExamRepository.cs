@@ -34,6 +34,11 @@ namespace Application.Repository
             return await _context.Exams.FirstOrDefaultAsync(c => c.Id == id);
         }
 
+        public Task UpdateIsDeletedFlag(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         async Task IGenericRepository<Exam>.DeleteAsync(Guid id)
         {
             var user = await _context.Exams.FirstOrDefaultAsync(c => c.Id == id);
