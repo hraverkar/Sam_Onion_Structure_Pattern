@@ -27,6 +27,10 @@ namespace Application.Features.ProductFeatures.CommandHandlers
             try
             {
                 var fileRes = FileHelper.FileStringToBase(request.File);
+                if (fileRes == null)
+                {
+                    FileHelper.ReadFileExcel(fileRes);
+                }
                 return "";
             }
             catch (Exception ex)
