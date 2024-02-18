@@ -25,6 +25,7 @@ namespace Application.Interfaces
         public DbSet<Teacher> Teachers { get; set; }
 
         public DbSet<UploadInformation> UploadInformations { get; set; }
+        public DbSet<EmailNotification> EmailNotifications { get; set; }
 
         Task<int> SaveChangesAsync();
     }

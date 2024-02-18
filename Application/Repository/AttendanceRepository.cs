@@ -8,13 +8,9 @@ using System.Threading.Tasks;
 
 namespace Application.Repository
 {
-    public class AttendanceRepository : IGenericRepository<Attendance>
+    public class AttendanceRepository(IApplicationDbContext context) : IGenericRepository<Attendance>
     {
-        private readonly IApplicationDbContext _context;
-        public AttendanceRepository(IApplicationDbContext context)
-        {
-            _context = context;
-        }
+        private readonly IApplicationDbContext _context = context;
 
         public async Task AddAsync(Attendance entity)
         {

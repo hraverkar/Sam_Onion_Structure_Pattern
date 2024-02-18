@@ -49,7 +49,7 @@ namespace WebApi
             services.AddApplication();
             services.AddPersistence(Configuration);
             services.AddControllers();
-            services.AddRepositories();
+            services.AddRepositories(Configuration);
             services.AddHttpClient();
 
             services.AddCors(options =>

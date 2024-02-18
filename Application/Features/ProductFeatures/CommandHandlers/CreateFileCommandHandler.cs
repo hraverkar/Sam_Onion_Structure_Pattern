@@ -1,6 +1,7 @@
 ﻿using Application.Features.ProductFeatures.Commands;
 using Application.Generic_Interface;
 using Domain.Entities;
+using Domain.Helper;
 using MediatR;
 using System;
 using System.Threading;
@@ -20,7 +21,7 @@ namespace Application.Features.ProductFeatures.CommandHandlers
         {
             try
             {
-                var fileRes = FileStringToBase(request.File);
+                var fileRes = FileHelper.FileStringToBase(request.File);
                 var fileDetail = new FileDetails
                 {
                     FileData = fileRes,
@@ -35,20 +36,6 @@ namespace Application.Features.ProductFeatures.CommandHandlers
             {
                 return await Task.FromResult($"File saving failed!! \r\n {ex}");
             }
-        }
-
-        private static byte[] FileStringToBase(string file)
-        {
-            var arrData = file.Split(';');
-            if (arrData != null && arrData.Length > 1)
-            {
-                var base64Data = arrData[1].Split(',');
-                if (base64Data != null && base64Data.Length > 0)
-                {
-                    return Convert.FromBase64String(base64Data[1]);
-                }
-            }
-            return null;
         }
     }
 }

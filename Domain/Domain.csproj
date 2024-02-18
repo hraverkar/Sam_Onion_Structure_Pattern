@@ -8,4 +8,10 @@
     <PackageReference Include="ExcelDataReader" Version="3.6.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Assets\BulkEmailTemplate.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

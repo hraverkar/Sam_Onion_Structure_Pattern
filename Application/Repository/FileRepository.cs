@@ -8,13 +8,10 @@ using System.Threading.Tasks;
 
 namespace Application.Repository
 {
-    public class FileRepository : IGenericRepository<FileDetails>
+    public class FileRepository(IApplicationDbContext context) : IGenericRepository<FileDetails>
     {
-        private readonly IApplicationDbContext _context;
-        public FileRepository(IApplicationDbContext context)
-        {
-            _context = context;
-        }
+        private readonly IApplicationDbContext _context = context;
+
         public async Task AddAsync(FileDetails entity)
         {
             _context.Files.Add(entity);

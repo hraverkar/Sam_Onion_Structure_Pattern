@@ -5,13 +5,8 @@ using System.Threading.Tasks;
 
 namespace Persistence.Context
 {
-    public class ApplicationDbContext : DbContext, IApplicationDbContext
+    public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options), IApplicationDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -33,6 +28,7 @@ namespace Persistence.Context
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<UploadInformation> UploadInformations { get; set; }
+        public DbSet<EmailNotification> EmailNotifications { get ; set; }
 
         // new tables 
 

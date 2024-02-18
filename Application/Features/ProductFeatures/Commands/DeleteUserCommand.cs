@@ -3,12 +3,8 @@ using System;
 
 namespace Application.Features.ProductFeatures.Commands
 {
-    public class DeleteUserCommand: IRequest<string>
+    public class DeleteUserCommand(Guid id) : IRequest<string>
     {
-        public Guid Id { get; set; }
-        public DeleteUserCommand(Guid id)
-        {
-            Id = id;
-        }
+        public Guid Id { get; set; } = id;
     }
 }

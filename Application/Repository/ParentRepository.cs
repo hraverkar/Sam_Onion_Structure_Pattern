@@ -10,13 +10,9 @@ using System.Threading.Tasks;
 
 namespace Application.Repository
 {
-    internal class ParentRepository : IGenericRepository<Parent>
+    internal class ParentRepository(IApplicationDbContext context) : IGenericRepository<Parent>
     {
-        private readonly IApplicationDbContext _context;
-        public ParentRepository(IApplicationDbContext context)
-        {
-            _context = context;
-        }
+        private readonly IApplicationDbContext _context = context;
 
         public async Task AddAsync(Parent entity)
         {

@@ -8,13 +8,9 @@ using System.Threading.Tasks;
 
 namespace Application.Repository
 {
-    public class ClassRepository : IGenericRepository<ClassTable>
+    public class ClassRepository(IApplicationDbContext context) : IGenericRepository<ClassTable>
     {
-        private readonly IApplicationDbContext _context;
-        public ClassRepository(IApplicationDbContext context)
-        {
-            _context = context;
-        }
+        private readonly IApplicationDbContext _context = context;
 
         public async Task AddAsync(ClassTable entity)
         {
