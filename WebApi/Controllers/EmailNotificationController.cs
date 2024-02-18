@@ -1,4 +1,5 @@
 ﻿using Application.Features.ProductFeatures.Commands;
+using Application.Features.ProductFeatures.Queries;
 using Application.Interfaces;
 using Domain.Dtos;
 using MediatR;
@@ -26,7 +27,7 @@ namespace WebApi.Controllers
             var command = new EmailNotificationCommand(emailNotification);
             var result = await _mediator.Send(command);
             return Ok(new { Value = result });
-           
+
         }
 
         [HttpPost("bulk-sendEmail")]
@@ -40,6 +41,19 @@ namespace WebApi.Controllers
             var result = await _mediator.Send(command);
             return Ok(new { Value = result });
 
+        }
+
+        [HttpGet("donwload-bulk-email-template")]
+        public async Task<IActionResult> DownloadEmailTemplate(string FileName)
+        {
+            var query = new GetTemplateQuery(FileName);
+            var result = await _mediator.Send(query);
+            const string contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+            var fileResult = new FileContentResult(result, contentType)
+            {
+                FileDownloadName = FileName
+            };
+            return Ok(fileResult);
         }
     }
 }
