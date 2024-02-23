@@ -28,10 +28,13 @@ namespace Persistence.Context
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<UploadInformation> UploadInformations { get; set; }
-        public DbSet<EmailNotification> EmailNotifications { get ; set; }
+        public DbSet<EmailNotification> EmailNotifications { get; set; }
 
         // new tables 
-
+        public DbSet<BlogPost> BlogPosts { get; set; }
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<BlogPostTag> BlogPostTags { get; set; }
+        public DbSet<Tag> Tags { get; set; }
 
         public async Task<int> SaveChangesAsync()
         {

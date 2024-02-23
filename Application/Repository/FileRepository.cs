@@ -47,5 +47,10 @@ namespace Application.Repository
         {
             throw new NotImplementedException();
         }
+
+        Task<FileDetails> IGenericRepository<FileDetails>.GetByNameAsync(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

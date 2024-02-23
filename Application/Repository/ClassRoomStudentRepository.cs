@@ -45,6 +45,11 @@ namespace Application.Repository
             }
         }
 
+        Task<ClassRoomStudent> IGenericRepository<ClassRoomStudent>.GetByNameAsync(string name)
+        {
+            throw new NotImplementedException();
+        }
+
         async Task IGenericRepository<ClassRoomStudent>.UpdateAsync(ClassRoomStudent entity)
         {
             var user = await _context.ClassRoomStudents.FirstOrDefaultAsync(c => c.Id == entity.Id);

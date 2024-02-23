@@ -27,6 +27,11 @@ namespace Application.Interfaces
         public DbSet<UploadInformation> UploadInformations { get; set; }
         public DbSet<EmailNotification> EmailNotifications { get; set; }
 
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<BlogPost> BlogPosts { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<BlogPostTag> BlogPostTags { get; set; }
+
         Task<int> SaveChangesAsync();
     }
 }

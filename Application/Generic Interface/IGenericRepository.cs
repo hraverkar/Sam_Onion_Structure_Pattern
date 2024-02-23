@@ -12,5 +12,6 @@ namespace Application.Generic_Interface
         Task UpdateAsync(T entity);
         Task DeleteAsync(Guid id);
         Task UpdateIsDeletedFlag(Guid id);
+        Task<T> GetByNameAsync(string name);
     }
 }

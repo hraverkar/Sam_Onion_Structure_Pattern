@@ -64,5 +64,10 @@ namespace Application.Repository
             }
 
         }
+
+        Task<User> IGenericRepository<User>.GetByNameAsync(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

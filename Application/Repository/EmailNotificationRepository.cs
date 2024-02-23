@@ -38,6 +38,11 @@ namespace Application.Repository
             }
         }
 
+        Task<EmailNotification> IGenericRepository<EmailNotification>.GetByNameAsync(string name)
+        {
+            throw new NotImplementedException();
+        }
+
         async Task IGenericRepository<EmailNotification>.UpdateAsync(EmailNotification entity)
         {
             var user = await _context.EmailNotifications.FirstOrDefaultAsync(c => c.Id == entity.Id);
